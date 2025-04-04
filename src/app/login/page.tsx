@@ -34,8 +34,8 @@ export default function LoginPage() {
 
   useEffect(() => {
     const initSocket = async () => {
-      const newSocket = await connectToWebSocket();
-      console.log("initSocket", newSocket);
+      const socket = new WebSocket('ws://ec2-3-107-2-100.ap-southeast-2.compute.amazonaws.com/ws/3?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBodWMxMjIzMzJAZ21haWwuY29tIiwiZXhwIjoxNzQzNzc3MDAyfQ.qTGCX6LjAozyzyNfG4sJ52hIOBNdDEKZ1D_LkWjGSrs');
+      console.log("initSocket", socket);
     }
     initSocket();
   }, []);
