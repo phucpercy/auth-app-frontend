@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# auth-app-frontend
 
-## Getting Started
+This repository contains the frontend of an authentication application built with **Next.js** and **TypeScript**.
 
-First, run the development server:
+Application can be found at https://auth-app-nooriam.vercel.app . However, due to the domain problem, websocket sever has not been deployed, so the function of real-time notifications is not running. The rest is working fine.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- npm or [Yarn](https://yarnpkg.com/)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/phucpercy/auth-app-frontend.git
+
+# Move into the directory
+cd auth-app-frontend
+
+# Install dependencies
+npm install
+# or
+yarn install
+```
+
+### Environment Variables
+Create a `.env.local` file in the root directory and add the following environment variables:
+
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:8080/api
+NEXT_PUBLIC_WEBSOCKET_URL=ws://localhost:8080/ws
+```
+
+### Running the Application
+To start the development server, run:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+The project is structured as follows:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+auth-app-frontend/
+├── public/ # Static assets
+├── src/
+│   ├── app/ # Nextj.s app directory
+        ├── globals.css/ # global styles
+│   ├── components/ # Reusable components
+│   ├── hooks/ # Custom hooks
+│   ├── lib/ # Utility functions and libraries
+        ├── api/ # API functions
+│   ├── types/ # TypeScript types and interfaces
+├── .gitignore
+├── package.json
+├── README.md
+├── tsconfig.json
+└── ...
+```

@@ -118,14 +118,6 @@ export default function DashboardPage() {
                 register.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <p>This is a simple dashboard demonstrating real-time notifications.</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Note: In this frontend-only demo, we&#39;re simulating notifications every 15 seconds.
-                In a real
-                application, these would come from a WebSocket connection to your backend.
-              </p>
-            </CardContent>
           </Card>
 
           <Card>
