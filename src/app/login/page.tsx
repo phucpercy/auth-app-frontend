@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import {useEffect, useState} from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { z } from "zod"
@@ -13,6 +13,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {login} from "@/lib/api/user";
+import {connectToWebSocket} from "@/lib/websocket-instance";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
@@ -30,6 +31,14 @@ export default function LoginPage() {
       password: "",
     },
   })
+
+  useEffect(() => {
+    const initSocket = async () => {
+      const newSocket = await connectToWebSocket();
+      console.log("initSocket", newSocket);
+    }
+    initSocket();
+  }, []);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true)
